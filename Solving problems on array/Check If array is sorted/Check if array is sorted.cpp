@@ -2,13 +2,14 @@
 using namespace std;
 int isSorted(int n, vector<int> a) {
     // Write your code here.
-    int count=n;
+    bool flag=true;
     for(int i=1;i<n;i++){
-      if(a[i]>=a[i-1])count--;
+      if(a[i]<a[i-1]){
+flag=false;
+break;
+      };
     }
-    if(count==1)return 1;
-    else
-    return 0;
+return (flag==true)?1:0;
 
 }
 
