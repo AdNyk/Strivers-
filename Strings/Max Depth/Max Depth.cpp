@@ -1,13 +1,19 @@
 #include<bits/stdc++.h>
 using namespace std;
 int maxDepth(string s) {
-	// Write your code here.
-	int count=0;
-	int n=s.size();
-	for(int i=0;i<n;i++){
-		if (s[i]=='(')count++;
-	}
-	return count;
+  int currentMax=0;
+  int currentDepth=0;
+
+  for(char c: s){
+  	if(c=='('){
+  		currentDepth++;
+  		currentMax=max(currentMax,currentDepth);
+  	}else if(c==')'){
+  		currentDepth--;
+  	}
+  }
+
+    return currentMax;
 }
 
 int main(){
